@@ -1,8 +1,8 @@
 FROM ambakshi/perforce-server
 MAINTAINER Amit Bakshi <ambakshi@gmail.com>
 
-ENV FUSION_VERSION 2015.3
-ENV REFRESHED_AT 2015-11-15
+ENV FUSION_VERSION 2016.2
+ENV REFRESHED_AT 2016-07-13
 
 RUN yum install -y helix-git-fusion-$FUSION_VERSION helix-git-fusion-3rdparty-git helix-git-fusion-trigger
 RUN yum install -y  openssh-server

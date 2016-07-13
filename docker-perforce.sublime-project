@@ -1,0 +1,20 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.tmp",
+				"*.bak",
+				"*.sublime-workspace",
+				"*.png",
+				"*.ico",
+			],
+			"folder_exclude_patterns":
+			[
+				".tmp",
+			],
+			"path": "."
+		}
+	]
+}

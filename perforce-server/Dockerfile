@@ -1,8 +1,8 @@
 FROM ambakshi/perforce-base
 MAINTAINER Amit Bakshi <ambakshi@gmail.com>
 
-ENV P4D_VERSION 2015.2
-ENV REFRESHED_AT 2015-11-15
+ENV P4D_VERSION 2016.1
+ENV REFRESHED_AT 2016-07-13
 
 RUN yum install -y helix-p4d-$P4D_VERSION helix-p4dctl
 RUN yum install -y tar gzip
@@ -12,6 +12,7 @@ RUN curl -sSL https://github.com/tianon/gosu/releases/download/1.7/gosu-amd64 > 
 
 EXPOSE 1666 8080
 ENV NAME=p4depot P4CONFIG=.p4config P4ROOT=/data/p4depot P4PORT=ssl:1666 P4USER=p4admin
+ENV CASE_INSENSITIVE=0
 VOLUME /data
 
 ADD ./p4-users.txt /root/

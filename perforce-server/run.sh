@@ -12,7 +12,7 @@ if [ ! -d /data/etc ]; then
 fi 
 
 mv /etc/perforce /etc/perforce.orig
-ln -s /data/etc /etc/perforce	
+ln -s /data/etc /etc/perforce
 
 
 NAME="${NAME:-$HOSTNAME}"
@@ -30,7 +30,7 @@ for DIR in $P4ROOT $P4SSLDIR; do
 done
 
 if ! p4dctl list 2>/dev/null | grep -q $NAME; then
-    /opt/perforce/sbin/configure-helix-p4d.sh $NAME -n -p $P4PORT -r $P4ROOT -u $P4USER -P "${P4PASSWD}"
+    /opt/perforce/sbin/configure-helix-p4d.sh $NAME -n -p $P4PORT -r $P4ROOT -u $P4USER -P "${P4PASSWD}" --case $CASE_INSENSITIVE
 fi
 
 p4dctl start -t p4d $NAME

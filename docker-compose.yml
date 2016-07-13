@@ -1,0 +1,24 @@
+#
+# This is a sample docker compose file to bring up a perforce stack
+# on a single computer. It doesn't build the images, so run make before.
+#
+p4-server:
+  image: ambakshi/perforce-server
+  restart: always
+  environment:
+    - "P4PORT=1666"
+    - "CASE_INSENSITIVE=1"
+  volumes:
+    - "/mnt/datavolumes/p4d:/data"
+  ports:
+    - "1666:1666"
+
+# git-fusion:
+#   image: ambakshi/perforce-git-fusion
+#   restart: always
+#   environment:
+#     - "P4PORT=p4-server:1666"
+#   ports:
+#     - "2222:22"
+#   links:
+#     - p4-server
